@@ -37,7 +37,7 @@ docker exec -it docker-mysql-1  mysql -uroot -proot -e "CREATE DATABASE municipi
 ```
 goto https://localhost/ and install wordpress
 ```
-docker exec -it docker-php-fpm-1 wp plugin activate advanced-custom-fields-pro --allow-root
+docker exec -it docker-php-fpm-1 wp plugin activate --all --allow-root
 ```
 
 ## Roadmap
