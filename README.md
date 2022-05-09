@@ -24,7 +24,6 @@
 [Advanced custom fields Pro](https://www.advancedcustomfields.com/pro/)
 ## How to 
 ```
-HOWTO
 cd docker/php-fpm/app
 composer install --prefer-source
 php build.php
