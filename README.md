@@ -7,23 +7,39 @@
 
 <p>
   <a href="https://github.com/helsingborg-stad/municipio-hackaton">
-    <img src="images/logo.jpg" alt="Logo" width="300">
+    <img src="images/hbg-github-logo-combo.png" alt="Logo" width="300">
   </a>
 </p>
-<h3>Municipio Hackaton edition</h3>
+<h1>Municipio Hackaton edition</h1>
 <p>
-  Docker environment for municipio
+  Docker environment for Municipio
   <br />
   <a href="https://github.com/helsingborg-stad/municipio-hackaton/issues">Report Bug</a>
   ·
   <a href="https://github.com/helsingborg-stad/municipio-hackaton/issues">Request Feature</a>
 </p>
 
-
-## 
-
-
-## About Deployment POC Wordpress
+## Requirements
+[Docker]([https://www.docker.com/)  
+[Advanced custom fields Pro](https://www.advancedcustomfields.com/pro/)
+## How to 
+```
+HOWTO
+cd docker/php-fpm/app
+composer install --prefer-source
+php build.php
+wget "{acf-link}" -O acf.zip
+unzip acf.zip -d wp-content/plugins/
+rm acf.zip
+cd ..
+cd ..
+docker-compose up -d
+docker exec -it docker-mysql-1  mysql -uroot -proot -e "CREATE DATABASE municipio /*\!40100 DEFAULT CHARACTER SET utf8 */;"
+```
+goto https://localhost/ and install wordpress
+```
+docker exec -it docker-php-fpm-1 wp plugin activate advanced-custom-fields-pro --allow-root
+```
 
 ## Roadmap
 
@@ -67,7 +83,6 @@ Distributed under the [MIT License][license-url].
 [issues-url]: https://github.com/helsingborg-stad/municipio-hackaton/issues
 [license-shield]: https://img.shields.io/github/license/helsingborg-stad/municipio-hackaton.svg?style=flat-square
 [license-url]: https://raw.githubusercontent.com/helsingborg-stad/municipio-hackaton/master/LICENSE
-[product-screenshot]: images/screenshot.png
 
 
 
