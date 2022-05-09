@@ -20,7 +20,7 @@
 </p>
 
 ## Requirements
-[Docker]([https://www.docker.com/)  
+[Docker](https://www.docker.com/)  
 [Advanced custom fields Pro](https://www.advancedcustomfields.com/pro/)
 ## How to 
 ```
