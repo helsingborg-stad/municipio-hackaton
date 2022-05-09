@@ -1,0 +1,9 @@
+/docker/php-fpm/app/wp-content/*
+!/docker/php-fpm/app/wp-content/object-cache.php
+/docker/php-fpm/app/wp-content/mu-plugins/*
+!/docker/php-fpm/app/wp-content/mu-plugins
+!/docker/php-fpm/app/wp-content/mu-plugins/loader.php
+/docker/php-fpm/app/vendor/
+/docker/php-fpm/app/wp/
+.DS_Store
+/docker/php-fpm/app/composer.lock

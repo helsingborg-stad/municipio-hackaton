@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  php-fpm:
+    build: 
+      context: ./php-fpm
+    volumes:
+      - ./php-fpm/app:/app
+    env_file:
+      - ./php-fpm/.env
+    links:
+      - redis
+      - mysql
+    ports:
+      - 80:80
+      - 443:443
+
+  redis:
+    image: "redis:latest"
+
+  mysql:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    cap_add:
+      - SYS_NICE
+volumes:
+  code:
+
