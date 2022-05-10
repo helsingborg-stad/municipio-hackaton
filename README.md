@@ -20,9 +20,20 @@
 </p>
 
 ## Requirements
-[Docker](https://www.docker.com/)  
-[Advanced custom fields Pro](https://www.advancedcustomfields.com/pro/)
+- [Docker](https://www.docker.com/)  
+- [Advanced custom fields Pro](https://www.advancedcustomfields.com/pro/)
+- [PHP 7.4](https://www.php.net/)
+- [NodeJS 16.x](https://nodejs.org/en/)
+- [GitHub Account](https://github.com)
 ## How to 
+Create a GitHub [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) with `read:packages` permissions.
+
+Insert helsingborg-stad into your npm config file `~/.npmrc` 
+```
+echo "@helsingborg-stad:registry=https://npm.pkg.github.com/helsingborg-stad" >> ~/.npmrc
+echo "//npm.pkg.github.com/:_authToken={your token}" >> ~/.npmrc
+```
+
 ```
 cd docker/php-fpm/app
 composer install --prefer-source
@@ -35,10 +46,12 @@ cd ..
 docker-compose up -d
 docker exec -it docker-mysql-1  mysql -uroot -proot -e "CREATE DATABASE municipio /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 ```
-goto https://localhost/ and install wordpress
+Surf to https://localhost/ and accept unsafe certificate in your browser and then install wordpress.  
+Enable all plugins.
 ```
 docker exec -it docker-php-fpm-1 wp plugin activate --all --allow-root
 ```
+Done!
 
 ## Roadmap
 
