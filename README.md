@@ -23,6 +23,7 @@
 - [Docker](https://www.docker.com/)  
 - [Advanced custom fields Pro](https://www.advancedcustomfields.com/pro/)
 - [PHP 7.4](https://www.php.net/)
+- [Composer](https://getcomposer.org/)
 - [NodeJS 16.x](https://nodejs.org/en/)
 - [GitHub Account](https://github.com)
 ## How to 
