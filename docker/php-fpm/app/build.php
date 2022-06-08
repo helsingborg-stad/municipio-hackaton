@@ -96,7 +96,7 @@ function executeCommand($command)
 {
     $fullCommand = '';
     if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-        $fullCommand = "$command 2>&1 & echo Exit status : %ErrorLevel%";
+        $fullCommand = "cmd /v:on /c \"$command 2>&1 & echo Exit status : !ErrorLevel!\"";
     } else {
         $fullCommand = "$command 2>&1 ; echo Exit status : $?";
     }
